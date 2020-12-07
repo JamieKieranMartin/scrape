@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start:dev": "npx nodemon",
-    "start": "npm run build && node ./build/main.js",
+    "dev": "npx nodemon",
+    "start": "npm run build && node ./build/index.js",
     "build": "npx rimraf ./build && npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint . --ext .ts",
@@ -12,9 +12,12 @@
     "prettier-format": "npx prettier --config .prettierrc 'src/**/*.ts' --write",
     "prettier-watch": "npx onchange 'src/**/*.ts' -- prettier --write {{changed}}"
   },
-  "dependencies": {},
+  "dependencies": {
+    "puppeteer": "^5.5.0"
+  },
   "devDependencies": {
     "@types/node": "^14.0.14",
+    "@types/puppeteer": "^5.4.1",
     "@typescript-eslint/eslint-plugin": "^4.0.0",
     "@typescript-eslint/parser": "^3.4.0",
     "eslint": "^7.3.1",
